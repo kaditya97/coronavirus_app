@@ -93,7 +93,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               introKey.currentState?.animateScroll(0);
             },
             child: const Text(
-              'Go To Start',
+              'Read Again',
               style: TextStyle(color: Colors.white),
             ),
             color: Colors.lightBlue,

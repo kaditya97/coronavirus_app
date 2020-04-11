@@ -17,6 +17,13 @@ class CustomDrawer extends StatelessWidget {
       );
     }
   }
+  Future<void> _launchEmail(String url) async {
+    if (await canLaunch(url)){
+      await launch(url);
+    }else{
+      throw 'Could not Launch $url';
+    }
+  }
 
   Future _showDialog(BuildContext context) async {
     // flutter defined function
@@ -119,6 +126,17 @@ class CustomDrawer extends StatelessWidget {
                         ),),
                 onTap: () => _launch("https://github.com/kaditya97/coronavirus_app"),
                 trailing: Icon(Icons.open_in_new,color: Colors.blue),
+              ),
+              ListTile(
+                leading: Icon(Icons.email,
+                color: Colors.blue),
+                title: Text("Feedback", style:  TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                onTap: () => _launchEmail('mailto:kaditya9711@gmail.com?subject=Coronvirus%20app%20feedback&body=Suggestion'),
+                trailing: Icon(Icons.open_in_new,
+                color: Colors.blue),
               ),
             ],
           ),

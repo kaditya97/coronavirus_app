@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool _loading = false;
-  final String url = "https://corona.lmao.ninja/all";
+  final String url = "https://corona.lmao.ninja/v2/all";
   int cases;
   int deaths;
   int recovered;

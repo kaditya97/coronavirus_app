@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
     });
 
     // final responseData = await http.get("https://jsonplaceholder.typicode.com/users");
-    final responseData = await http.get("https://corona.lmao.ninja/countries");
+    final responseData = await http.get("https://corona.lmao.ninja/v2/countries");
 
     if (responseData.statusCode == 200) {
       final data = jsonDecode(responseData.body);
@@ -218,7 +218,7 @@ double screenWidth;
 
   void _getNames() async {
     List tempList = new List();
-    final repoData = await http.get("https://corona.lmao.ninja/countries");
+    final repoData = await http.get("https://corona.lmao.ninja/v2/countries");
      final datas = jsonDecode(repoData.body);
         for (Map i in datas) {
           listModel.add(User.fromJson(i));
